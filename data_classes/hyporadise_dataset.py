@@ -114,8 +114,8 @@ class HyporadiseDataset(Dataset):
             )
         
             return {
-                'input_ids': input_encoded['input_ids'].squeeze(),
-                'attention_mask': input_encoded['attention_mask'].squeeze(),
+                'input_ids': input_encoded['input_ids'].squeeze(), 
+                'attention_mask': input_encoded['attention_mask'].squeeze(), 
                 'labels': output_encoded['input_ids'].squeeze(),
                 'input_text': input_text,
                 'output_text': output_text,

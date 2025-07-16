@@ -1,21 +1,21 @@
 training:
-  checkpoint_dir: "flan-t5-models/"
+  checkpoint_dir: "flan-t5-comb-models/"
   epochs: 10
-  batch_size: 4
+  batch_size: 8
   warmup_ratio: 0.1
   weight_decay: 0.01
-  log_dir: "flan-t5-logs"
+  log_dir: "logs"
   logging_steps: 1000
-  eval_strategy: "steps" #epoch
-  save_strategy: "steps" #epoch
-  eval_steps: 6025 #2000
-  save_steps: 6025 #2000
+  evaluation_strategy: "steps"
+  save_strategy: "steps"
+  eval_steps: 6025
+  save_steps: 6025
   load_best_model_at_end: true
-  learning_rate: 0.00005
+  learning_rate: 0.0005
   dataloader_num_workers: 4
-  save_total_limit: null #3
+  save_total_limit: 3
   use_cuda: true
-  fp16: true #false
+  fp16: true
   metric_for_best_model: "wer"
   greater_is_better: false
   hub_model_id: "leave_empty"
@@ -26,12 +26,12 @@ model:
   model_tag: "google/flan-t5-base"
 
 data:
-  train_file: "nbest_train_dev.json"
+  train_file: "nbest_combined.json"
   test_file: "nbest_test.json"
   dataset_file: null
   max_input_length: 1280
   max_output_length: 256
-  train_val_split: 0.9 #0.99
+  train_val_split: 0.9
   truncation: true
   prefix_prompt: "Generate the correct transcription for the following n-best list of ASR hypotheses:"
   suffix_prompt: ""
@@ -39,4 +39,5 @@ data:
 
 inference:
   specific_test_file: ""
-  specific_checkpoint_dir: "morenolq/flanec-base-cd"
+  specific_checkpoint_dir: "morenolq/flanec-base-cd-lora"
+  adapters_name: "ger"

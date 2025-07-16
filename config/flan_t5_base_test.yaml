@@ -6,10 +6,10 @@ training:
   weight_decay: 0.01
   log_dir: "flan-t5-logs"
   logging_steps: 1000
-  eval_strategy: "steps" #epoch
-  save_strategy: "steps" #epoch
-  eval_steps: 6025 #2000
-  save_steps: 6025 #2000
+  eval_strategy: "steps"
+  save_strategy: "steps"
+  eval_steps: 10 #2000/6025
+  save_steps: 10 #2000/6025
   load_best_model_at_end: true
   learning_rate: 0.00005
   dataloader_num_workers: 4

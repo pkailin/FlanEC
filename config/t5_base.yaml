@@ -1,10 +1,10 @@
 training:
-  checkpoint_dir: "flan-t5-models/"
+  checkpoint_dir: "t5-models/"
   epochs: 10
   batch_size: 4
   warmup_ratio: 0.1
   weight_decay: 0.01
-  log_dir: "flan-t5-logs"
+  log_dir: "t5-logs"
   logging_steps: 1000
   eval_strategy: "steps" #epoch
   save_strategy: "steps" #epoch
@@ -23,7 +23,7 @@ training:
   gradient_accumulation_steps: 1
 
 model:
-  model_tag: "google/flan-t5-base"
+  model_tag: "google-t5/t5-base"
 
 data:
   train_file: "nbest_train_dev.json"

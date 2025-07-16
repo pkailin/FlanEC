@@ -15,6 +15,14 @@ from data_classes.hyporadise_dataset import HyporadiseDataset
 # Removes the warning for the number of threads used for data loading
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
+# Check for GPU availability
+if not torch.cuda.is_available():
+    raise RuntimeError("No GPU detected! This training script requires CUDA. Please run on a GPU-enabled node.")
+
+print(f"GPU available: {torch.cuda.is_available()}")
+print(f"GPU count: {torch.cuda.device_count()}")
+print(f"Current GPU: {torch.cuda.get_device_name(0)}")
+
 # Load configuration from yaml file
 config = add_arguments()
 config = Dict(config)
@@ -37,6 +45,32 @@ s2s_train_dataset = HyporadiseDataset(
     is_test=False,
     use_source=config.data.use_source,
 )
+
+sample_entry = s2s_train_dataset[0]
+
+print("\nInput text (formatted prompt):")
+print("-" * 40)
+print(sample_entry['input_text'])
+
+print("\nOutput text (target):")
+print("-" * 40)
+print(repr(sample_entry['output_text']))
+
+print("\nTensor shapes:")
+print("-" * 40)
+print(f"input_ids shape: {sample_entry['input_ids'].shape}")
+print(f"attention_mask shape: {sample_entry['attention_mask'].shape}")
+print(f"labels shape: {sample_entry['labels'].shape}")
+
+print("\nFirst 10 input tokens (decoded):")
+print("-" * 40)
+first_10_tokens = sample_entry['input_ids'][:10]
+print(s2s_train_dataset.tokenizer.decode(first_10_tokens))
+
+print("\nFirst 10 label tokens (decoded):")
+print("-" * 40)
+first_10_labels = sample_entry['labels'][:10]
+print(s2s_train_dataset.tokenizer.decode(first_10_labels))
 
 # Split the training dataset into training and validation sets using torch.utils.data.random_split
 train_size = int(config.data.train_val_split * len(s2s_train_dataset))
@@ -68,7 +102,7 @@ training_arguments = transformers.Seq2SeqTrainingArguments(
     weight_decay=config.training.weight_decay,
     logging_dir=config.training.log_dir,
     logging_steps=config.training.logging_steps,
-    evaluation_strategy=config.training.eval_strategy,
+    eval_strategy=config.training.eval_strategy,
     save_strategy=config.training.eval_strategy,
     eval_steps=config.training.eval_steps if config.training.eval_strategy == "steps" else config.training.logging_steps,
     save_steps=config.training.save_steps if config.training.eval_strategy == "steps" else config.training.logging_steps,
@@ -83,6 +117,7 @@ training_arguments = transformers.Seq2SeqTrainingArguments(
     hub_model_id=config.training.hub_model_id,
     push_to_hub=config.training.push_to_hub,
     gradient_accumulation_steps=config.training.gradient_accumulation_steps,
+    report_to="tensorboard",
 )
 
 # Define the compute_metrics function

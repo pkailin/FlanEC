@@ -1,0 +1,13 @@
+flan-t5-comb-logs/
+flan-t5-comb-models/
+flan-t5-logs/
+flan-t5-models/
+logs/ 
+models/
+*sclite*
+archives/
+augmented_audio/
+data/
+t5-logs/
+t5-models/
+*.json

@@ -1,0 +1,215 @@
+[nltk_data] Downloading package punkt to /home/klp65/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/rds/user/klp65/hpc-work/whisper-fork/whisper/__init__.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(fp, map_location=device)
+Loading Whisper model...
+Whisper model loaded
+Parsing .scp and text...
+Parsing of .scp and text files completed!
+Transcribing audio:   0%|          | 0/9150 [00:00<?, ?it/s]Transcribing audio:   0%|          | 1/9150 [00:01<3:10:23,  1.25s/it]Transcribing audio:   0%|          | 2/9150 [00:01<1:51:54,  1.36it/s]Transcribing audio:   0%|          | 3/9150 [00:02<1:28:11,  1.73it/s]Transcribing audio:   0%|          | 4/9150 [00:02<1:27:46,  1.74it/s]Transcribing audio:   0%|          | 5/9150 [00:04<2:15:17,  1.13it/s]Transcribing audio:   0%|          | 6/9150 [00:04<2:06:59,  1.20it/s]Transcribing audio:   0%|          | 7/9150 [00:05<1:44:13,  1.46it/s]Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_002
+Function safe_transcribe_with_whisper completed in 0.91 seconds
+Hypotheses: ['we were doing a on solar panels and how they work', 'we were doing a on solar panels and how they work', 'we were doing a p mail on solar panels and how they work', 'we were doing a p mail on solar panels and how they work', 'we were doing a p mail on solar panels and how they work']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. we were doing a on solar panels and how they work
+2. we were doing a on solar panels and how they work
+3. we were doing a p mail on solar panels and how they work
+4. we were doing a p mail on solar panels and how they work
+5. we were doing a p mail on solar panels and how they work
+
+--------------------------------------------------
+Prediction: we were doing a p mail on solar panels and how they work
+Actual: a we were doing a p bell on solar panels and housing work
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_017
+Function safe_transcribe_with_whisper completed in 0.21 seconds
+Hypotheses: ['it is a parallel circuit', 'it is a parallel circuit', 'it is a parallel circuit', 'it is a parallel circuit', 'it is a parallel circuit']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. it is a parallel circuit
+2. it is a parallel circuit
+3. it is a parallel circuit
+4. it is a parallel circuit
+5. it is a parallel circuit
+
+--------------------------------------------------
+Prediction: it is a parallel circuit
+Actual: it is a parallel circuit
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_005
+Function safe_transcribe_with_whisper completed in 0.23 seconds
+Hypotheses: ['it shares it is own pathway', 'it shares it is own pathway', 'it shares its own pathway', 'it shares its own pathway', 'it shares it is own pathway']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. it shares it is own pathway
+2. it shares it is own pathway
+3. it shares its own pathway
+4. it shares its own pathway
+5. it shares it is own pathway
+
+--------------------------------------------------
+Prediction: it shares its own pathway
+Actual: it shares it s own pathway
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_020
+Function safe_transcribe_with_whisper completed in 0.33 seconds
+Hypotheses: ['it flows into the positive side but not the negative side', 'it flows into the positive side but not the negative side', 'it flows into the positive side but not the negative side', 'it flows into the positive side but not the negative side', 'it flows in through the positive side but not the negative side']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. it flows into the positive side but not the negative side
+2. it flows into the positive side but not the negative side
+3. it flows into the positive side but not the negative side
+4. it flows into the positive side but not the negative side
+5. it flows in through the positive side but not the negative side
+
+--------------------------------------------------
+Prediction: it flows into the positive side but not the negative side
+Actual: they provisions in the positive side but not the negative side
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_022
+Function safe_transcribe_with_whisper completed in 0.83 seconds
+Hypotheses: ['they are going through the light bulbs and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one', 'they are going through the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one', 'they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one.', 'they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one', 'they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. they are going through the light bulbs and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one
+2. they are going through the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one
+3. they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one.
+4. they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one
+5. they are going to the light bulb and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the 1st one
+
+--------------------------------------------------
+Prediction: they are going through the light bulbs and back to the d cell and then some are going some are going to the other light bulb and passing back through the light bulb the first one
+Actual: they are probably instead a light bulbs and back to the d cell and then are some are going are some are going to the other light bulb and passing back through the light bulb if first one
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_008
+Function safe_transcribe_with_whisper completed in 0.40 seconds
+Hypotheses: ['the parallel circuits they share energy and the series circuit do nothing they are not sharing', 'the parallel circuits they share energy and the series circuit do nothing they are not sharing', 'the parallel circuits they share energy and the series circuit do nothing they are not sharing', 'the parallel circuits they share energy and the series circuit do nothing they are not sharing', 'the parallel circuits they share energy and the series circuit do nothing they are not share']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. the parallel circuits they share energy and the series circuit do nothing they are not sharing
+2. the parallel circuits they share energy and the series circuit do nothing they are not sharing
+3. the parallel circuits they share energy and the series circuit do nothing they are not sharing
+4. the parallel circuits they share energy and the series circuit do nothing they are not sharing
+5. the parallel circuits they share energy and the series circuit do nothing they are not share
+
+--------------------------------------------------
+Prediction: the parallel circuits they share energy and the series circuit do nothing they are not sharing
+Actual: the parallel circuits they share energy and the series circuit do nothing they not share
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_015
+Function safe_transcribe_with_whisper completed in 0.20 seconds
+Hypotheses: ['uhm they are', 'they are', 'they are', 'they are', 'they are']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. uhm they are
+2. they are
+3. they are
+4. they are
+5. they are
+
+--------------------------------------------------
+Prediction: they are
+Actual: they are
+Transcribing: myst_008051_2014-04-17_10-44-52_EE_2.2_014
+Function safe_transcribe_with_whisper completed in 0.69 seconds
+Transcribing audio:   0%|          | 8/9150 [00:06<2:11:35,  1.16it/s]Transcribing audio:   0%|          | 9/9150 [00:06<1:48:51,  1.40it/s]Transcribing audio:   0%|          | 10/9150 [00:08<2:19:17,  1.09it/s]Transcribing audio:   0%|          | 11/9150 [00:08<1:55:30,  1.32it/s]Transcribing audio:   0%|          | 12/9150 [00:09<1:54:28,  1.33it/s]Hypotheses: ['uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit', 'uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit', 'uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit', 'uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit', 'uhm they are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+2. uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+3. uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+4. uhm they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+5. uhm they are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+
+--------------------------------------------------
+Prediction: they some of them are sharing energy and going back to the batteries but some are going to the other light bulb so it is a parallel circuit
+Actual: they are sharing energy and going back to the batteries but someone going to the other light bulb so it is parallel circuit
+Transcribing: myst_008051_2014-04-17_10-57-20_EE_2.3_005
+Function safe_transcribe_with_whisper completed in 0.22 seconds
+Hypotheses: ['because there is a open circuit', 'because it is a open circuit', 'because there is a open circuit', 'because there is a open circuit', 'because there is a open circuit']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. because there is a open circuit
+2. because it is a open circuit
+3. because there is a open circuit
+4. because there is a open circuit
+5. because there is a open circuit
+
+--------------------------------------------------
+Prediction: because there is a open circuit
+Actual: because it is a open circuit
+Transcribing: myst_008051_2014-04-17_10-57-20_EE_2.3_027
+Function safe_transcribe_with_whisper completed in 0.78 seconds
+Hypotheses: ['they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one', 'they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one', 'they are all connected to the negative and the positive side and they are all sharing it so 1st it gets from the small the little one then the middle one and then the large one', 'they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one', 'they are all connected to the negative and the positive side and they are all sharing it so 1st it gets from the small the little one then the middle one and then the large one']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one
+2. they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one
+3. they are all connected to the negative and the positive side and they are all sharing it so 1st it gets from the small the little one then the middle one and then the large one
+4. they are all connected to the negative and the positive side and they are all sharing it so 1st it is from the small the little one then the middle one and then the large one
+5. they are all connected to the negative and the positive side and they are all sharing it so 1st it gets from the small the little one then the middle one and then the large one
+
+--------------------------------------------------
+Prediction: they are all connected to the and the positive side and they are all sharing it so first it is from the small the little one then the middle one and then the large one
+Actual: they are all connected to the and positive side and there all sharing a so first of the from the small the little one then middle one and then the large one
+Transcribing: myst_008051_2014-04-17_10-57-20_EE_2.3_032
+Function safe_transcribe_with_whisper completed in 0.24 seconds
+Hypotheses: ['see you next time marnie', 'see you next time marnie', 'see you next time marnie', 'see you next time marnie', 'see you next time marnie']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. see you next time marnie
+2. see you next time marnie
+3. see you next time marnie
+4. see you next time marnie
+5. see you next time marnie
+
+--------------------------------------------------
+Prediction: see you next time marnie
+Actual: see you next time learning
+Transcribing: myst_008051_2014-04-17_10-57-20_EE_2.3_011
+Function safe_transcribe_with_whisper completed in 0.44 seconds
+Hypotheses: ['uhm that uhm the the light bulb has too much uhm power going into it', 'that the the light bulb has too much power going into it', 'that the the light bulb has too much power going into it', 'that the the light bulb has too much power going into it', 'that the the light bulb has too much power going into it']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. uhm that uhm the the light bulb has too much uhm power going into it
+2. that the the light bulb has too much power going into it
+3. that the the light bulb has too much power going into it
+4. that the the light bulb has too much power going into it
+5. that the the light bulb has too much power going into it
+
+--------------------------------------------------
+Prediction: that the the light bulb has too much power going into it
+Actual: that the the light bulb has so much on power going into way
+Transcribing: myst_008051_2014-04-17_10-57-20_EE_2.3_029
+Function safe_transcribe_with_whisper completed in 0.49 seconds
+Hypotheses: ['that the 1st one it is it shows how it breaks and the 2nd one shows how it starts', 'that the 1st one it is it shows how it breaks and the 2nd one shows how it is', 'that the 1st one it is it shows how it breaks and the 2nd one shows how it stills', 'that the 1st one it is it shows how it breaks and the 2nd one shows how it stores', 'that the 1st one it is it shows how it breaks and the 2nd one shows how it stores']
+Formatted input:
+--------------------------------------------------
+Generate the correct transcription for the following n-best list of ASR hypotheses:
+
+1. that the 1st one it is it shows how it breaks and the 2nd one shows how it starts
+2. that the 1st one it is it shows how it breaks and the 2nd one shows how it is
+3. that the 1st one it is it shows how it breaks and the 2nd one shows how it stills
+4. that the 1st one it is it shows how it breaks and the 2nd one shows how it stores
+5. that the 1st one it is it shows how it breaks and the 2nd one shows how it stores
+
+--------------------------------------------------
+Transcribing audio:   0%|          | 13/9150 [00:10<1:58:53,  1.28it/s]Transcribing audio:   0%|          | 14/9150 [00:11<2:14:36,  1.13it/s]Transcribing audio:   0%|          | 15/9150 [00:12<2:13:49,  1.14it/s]Transcribing audio:   0%|          | 16/9150 [00:13<2:27:07,  1.03it/s]
